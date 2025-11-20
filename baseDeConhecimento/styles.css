@@ -38,11 +38,16 @@ header h1 {
     white-space: nowrap; /* Impede a quebra de linha do texto */
 }
 
+header > div {
+    display: flex; /* 1. Habilita o flexbox no container da busca */
+    align-items: center; /* 2. Alinha o botão e o input verticalmente */
+}
+
 div input {
     padding: 0.375rem 0.75rem; /* Espaçamento interno */
     border-radius: 1rem; /* Arredonda as bordas */
-    border: 1px solid var(--tertiary-color); /* Define a borda */
-    background: var(--bg-color); /* Cor de fundo */
+    border: 1px solid var(--primary-color); /* Define a borda com a cor primária */
+    background: rgba(138, 180, 248, 0.1); /* Cor de fundo com 10% de opacidade da cor primária */
     font-family: inherit; /* Herda a família da fonte do elemento pai */
     font-size: 1.5rem; /* Tamanho da fonte */
     transition: all 0.2s ease; /* Adiciona uma transição suave para todas as propriedades */
@@ -59,12 +64,12 @@ div input::placeholder {
 
 div input:focus {
     outline: none; /* Remove a borda de foco padrão */
-    border-color: var(--bg-color); /* Muda a cor da borda ao focar */
-    box-shadow: 0 0 0 0.1rem var(--tertiary-color); /* Adiciona uma sombra de caixa para indicar foco */
+    border-color: var(--primary-color); /* Mantém a cor da borda ao focar */
+    box-shadow: 0 0 0 0.1rem var(--primary-color); /* Adiciona uma sombra de caixa para indicar foco */
 }
 
-#botao-busca {
-    padding: 1rem 2rem; /* Espaçamento interno */
+button#searchButton {
+    padding: 0.8rem 2rem; /* 3. Ajusta o padding vertical para corresponder à altura do input */
     border-radius: 1rem; /* Arredonda as bordas */
     border: none; /* Remove a borda padrão */
     cursor: pointer; /* Muda o cursor para uma mão ao passar por cima */
@@ -73,18 +78,18 @@ div input:focus {
     font-size: 1rem; /* Tamanho da fonte */
     white-space: nowrap; /* Impede a quebra de linha do texto */
     transition: background-color 0.2s ease, color 0.2s ease; /* Transição suave para cor de fundo e cor do texto */
-    background-color: var(--bg-color); /* Cor de fundo */
+    background-color: rgba(138, 180, 248, 0.1); /* Cor de fundo com 10% de opacidade da cor primária */
     color: var(--secondary-color); /* Cor do texto */
-    border: 1px solid var(--bg-color); /* Adiciona uma borda */
+    border: 1px solid var(--primary-color); /* Adiciona uma borda com a cor primária */
 }
 
-#botao-busca:hover {
+#searchButton:hover {
     background-color: var(--primary-color); /* Muda a cor de fundo ao passar o mouse */
     color: var(--bg-color); /* Muda a cor do texto ao passar o mouse */
     box-shadow: 0 0 0 0.1rem var(--primary-color); /* Adiciona uma sombra de caixa */
 }
 
-#botao-busca:active {
+#searchButton:active {
     transform: scale(0.98); /* Efeito de clique (diminui o tamanho) */
 }
 
@@ -94,23 +99,29 @@ main {
     margin: 0 auto; /* Centraliza o conteúdo principal horizontalmente */
     margin-top: 2rem; /* Margem no topo */
     height: calc(100vh - 10rem - 4rem); /* Calcula a altura para preencher o espaço restante da tela */
+    scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
+    -ms-overflow-style: none;  /* Oculta a barra de rolagem no IE e Edge */
+}
+
+main::-webkit-scrollbar {
+    display: none; /* Oculta a barra de rolagem no Chrome, Safari e Opera */
 }
 
 article {
     background: none; /* Sem cor de fundo */
-    border-radius: 0; /* Sem bordas arredondadas */
-    padding: 0; /* Remove o padding */
-    padding: 0 1rem; /* Espaçamento interno nos lados */
+    border-radius: 1rem; /* 1. Adiciona bordas arredondadas */
+    padding: 1rem 1.5rem; /* 2. Ajusta o padding para ser consistente */
     margin-bottom: 1.25rem; /* Margem inferior */
     box-shadow: none; /* Sem sombra */
     transition: background-color 0.3s ease, border-bottom-color 0.3s ease; /* Transição suave */
     border-bottom: 1px solid var(--bg-color); /* Borda inferior */
-    padding-bottom: 1.5rem; /* Espaçamento interno inferior */
 }
 
 article:hover {
     transform: scale(1.01); /* Aumenta ligeiramente o tamanho ao passar o mouse */
     cursor: pointer; /* Muda o cursor para uma mão */
+    /* 3. Adiciona um fundo sutil e semi-transparente */
+    background-color: rgba(138, 180, 248, 0.05); 
 }
 
 article h2 {
