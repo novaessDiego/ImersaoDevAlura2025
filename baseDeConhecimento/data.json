@@ -1,0 +1,45 @@
+[
+    {
+        "nome" : "JavaScrip",
+        "descricao" : "JavaScrip é uma linguagem de programação para Web",
+        "ano" : 1995,
+        "link" : "http:https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"
+    },
+
+    {
+        "nome" : "Python",
+        "descricao" : "Python é uma linguagem de programação para Ciência de Dados e IA",
+        "ano" : 1991,
+        "link" : "https://docs.python.org/3/"
+    },
+    {
+        "nome" : "C#",
+        "descricao" : "C# é uma linguagem de programação desenvolvida pela Microsoft, usada principalmente para criar aplicativos Windows, jogos com Unity e aplicações web com .NET.",
+        "ano" : 2000,
+        "link" : "https://learn.microsoft.com/pt-br/dotnet/csharp/"
+    },
+    {
+        "nome" : "Java",
+        "descricao" : "Java é uma linguagem de programação versátil e portável, amplamente utilizada para desenvolvimento de aplicativos Android, sistemas corporativos e aplicações web.",
+        "ano" : 1995,
+        "link" : "https://docs.oracle.com/en/java/javase/21/"
+    },
+    {
+        "nome" : "PHP",
+        "descricao" : "PHP é uma linguagem de script do lado do servidor popular para o desenvolvimento web, sendo a base de sistemas como o WordPress.",
+        "ano" : 1995,
+        "link" : "https://www.php.net/manual/pt_BR/"
+    },
+    {
+        "nome" : "TypeScript",
+        "descricao" : "TypeScript é um superconjunto de JavaScript que adiciona tipagem estática, ajudando a criar aplicações JavaScript mais robustas e com menos bugs.",
+        "ano" : 2012,
+        "link" : "https://www.typescriptlang.org/docs/"
+    },
+    {
+        "nome" : "Go",
+        "descricao" : "Go (ou Golang) é uma linguagem de programação criada pelo Google, conhecida por sua eficiência e suporte nativo à concorrência, ideal para sistemas de backend e microsserviços.",
+        "ano" : 2009,
+        "link" : "https://go.dev/doc/"
+    }
+]
