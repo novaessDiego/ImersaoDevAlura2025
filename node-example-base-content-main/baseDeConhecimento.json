@@ -4,7 +4,6 @@
     "descricao": "Linguagem de programação compilada e concorrente, projetada pelo Google para ser simples e eficiente.",
     "data_criacao": "2009",
     "link": "https://golang.org/",
-    "icon_class": "devicon-go-plain",
     "tags": [
       "linguagem de programação",
       "backend",
@@ -17,7 +16,6 @@
     "descricao": "Linguagem de programação de sistemas que foca em segurança, especialmente concorrência segura, e desempenho.",
     "data_criacao": "2010",
     "link": "https://www.rust-lang.org/",
-    "icon_class": "devicon-rust-plain",
     "tags": [
       "linguagem de programação",
       "sistemas",
@@ -30,7 +28,6 @@
     "descricao": "Um superset do JavaScript que adiciona tipagem estática opcional, compilando para JavaScript puro.",
     "data_criacao": "2012",
     "link": "https://www.typescriptlang.org/",
-    "icon_class": "devicon-typescript-plain",
     "tags": [
       "linguagem de programação",
       "frontend",
@@ -44,7 +41,6 @@
     "descricao": "Linguagem de programação moderna, estaticamente tipada, que roda na Máquina Virtual Java (JVM) e é a linguagem preferida para desenvolvimento Android.",
     "data_criacao": "2011",
     "link": "https://kotlinlang.org/",
-    "icon_class": "devicon-kotlin-plain",
     "tags": [
       "linguagem de programação",
       "backend",
@@ -57,7 +53,6 @@
     "descricao": "Framework progressivo para construção de interfaces de usuário, conhecido por sua facilidade de integração.",
     "data_criacao": "2014",
     "link": "https://vuejs.org/",
-    "icon_class": "devicon-vuejs-plain",
     "tags": [
       "framework",
       "frontend",
@@ -70,7 +65,6 @@
     "descricao": "Um compilador que converte código declarativo em JavaScript imperativo altamente eficiente, sem depender de um Virtual DOM.",
     "data_criacao": "2016",
     "link": "https://svelte.dev/",
-    "icon_class": "devicon-svelte-plain",
     "tags": [
       "framework",
       "frontend",
@@ -83,7 +77,6 @@
     "descricao": "Framework React de código aberto que permite renderização do lado do servidor (SSR) e geração de sites estáticos.",
     "data_criacao": "2016",
     "link": "https://nextjs.org/",
-    "icon_class": "devicon-nextjs-original",
     "tags": [
       "framework",
       "frontend",
@@ -97,7 +90,6 @@
     "descricao": "Framework CSS utilitário que permite construir designs complexos rapidamente usando classes pré-definidas.",
     "data_criacao": "2017",
     "link": "https://tailwindcss.com/",
-    "icon_class": "devicon-tailwindcss-plain",
     "tags": [
       "framework",
       "css",
@@ -110,7 +102,6 @@
     "descricao": "Plataforma para desenvolver, enviar e executar aplicações dentro de contêineres isolados e portáteis.",
     "data_criacao": "2013",
     "link": "https://www.docker.com/",
-    "icon_class": "devicon-docker-plain",
     "tags": [
       "devops",
       "containerização",
@@ -123,7 +114,6 @@
     "descricao": "Sistema de orquestração de contêineres de código aberto que automatiza a implantação, escalonamento e gerenciamento de aplicações em contêineres.",
     "data_criacao": "2014",
     "link": "https://kubernetes.io/",
-    "icon_class": "devicon-kubernetes-plain",
     "tags": [
       "devops",
       "orquestração",
@@ -137,7 +127,6 @@
     "descricao": "Ferramenta de Infraestrutura como Código (IaC) que permite definir e provisionar recursos de infraestrutura usando arquivos de configuração declarativos.",
     "data_criacao": "2014",
     "link": "https://www.terraform.io/",
-    "icon_class": "devicon-terraform-plain",
     "tags": [
       "devops",
       "iac",
@@ -150,7 +139,6 @@
     "descricao": "Sistema de gerenciamento de banco de dados relacional de código aberto, conhecido por sua robustez e conformidade com padrões.",
     "data_criacao": "1996",
     "link": "https://www.postgresql.org/",
-    "icon_class": "devicon-postgresql-plain",
     "tags": [
       "banco de dados",
       "rdbms",
@@ -163,7 +151,6 @@
     "descricao": "Banco de dados NoSQL baseado em documentos, oferecendo flexibilidade e escalabilidade horizontal.",
     "data_criacao": "2009",
     "link": "https://www.mongodb.com/",
-    "icon_class": "devicon-mongodb-plain",
     "tags": [
       "banco de dados",
       "nosql",
@@ -176,7 +163,6 @@
     "descricao": "Armazenamento de estrutura de dados em memória, frequentemente usado como cache, message broker e banco de dados primário.",
     "data_criacao": "2009",
     "link": "https://redis.io/",
-    "icon_class": "devicon-redis-plain",
     "tags": [
       "banco de dados",
       "cache",
@@ -189,7 +175,6 @@
     "descricao": "Linguagem de consulta de dados para APIs, permitindo que os clientes solicitem exatamente os dados de que precisam.",
     "data_criacao": "2015",
     "link": "https://graphql.org/",
-    "icon_class": "devicon-graphql-plain",
     "tags": [
       "api",
       "linguagem de consulta",
@@ -202,7 +187,6 @@
     "descricao": "Runtime seguro para JavaScript e TypeScript que utiliza V8 e Rust, visando ser um sucessor moderno do Node.js.",
     "data_criacao": "2018",
     "link": "https://deno.com/",
-    "icon_class": "devicon-deno-original",
     "tags": [
       "runtime",
       "javascript",
@@ -215,7 +199,6 @@
     "descricao": "Framework que facilita a criação de aplicações Java autônomas e prontas para produção, baseado no ecossistema Spring.",
     "data_criacao": "2014",
     "link": "https://spring.io/projects/spring-boot",
-    "icon_class": "devicon-spring-plain",
     "tags": [
       "framework",
       "java",
@@ -228,7 +211,6 @@
     "descricao": "Framework progressivo para construir aplicações eficientes e escaláveis do lado do servidor usando Node.js e TypeScript.",
     "data_criacao": "2017",
     "link": "https://nestjs.com/",
-    "icon_class": "devicon-nestjs-plain",
     "tags": [
       "framework",
       "backend",
@@ -242,7 +224,6 @@
     "descricao": "Serviço de computação serverless orientado a eventos da Amazon Web Services, que executa código em resposta a eventos.",
     "data_criacao": "2014",
     "link": "https.aws.amazon.com/lambda/",
-    "icon_class": "devicon-amazonwebservices-original",
     "tags": [
       "serverless",
       "faas",
@@ -256,7 +237,6 @@
     "descricao": "Kit de desenvolvimento de UI do Google para construir aplicações nativas, compiladas e multi-plataforma a partir de um único código-base.",
     "data_criacao": "2017",
     "link": "https://flutter.dev/",
-    "icon_class": "devicon-flutter-plain",
     "tags": [
       "mobile",
       "desenvolvimento",
@@ -269,7 +249,6 @@
     "descricao": "Linguagem de programação multiparadigma, desenvolvida pela Microsoft como parte da iniciativa .NET.",
     "data_criacao": "2000",
     "link": "https://dotnet.microsoft.com/languages/csharp",
-    "icon_class": "devicon-csharp-plain",
     "tags": [
       "linguagem de programação",
       ".net",
@@ -282,7 +261,6 @@
     "descricao": "Mecanismo de busca e análise distribuído, baseado em Lucene, frequentemente usado para logs e buscas em tempo real.",
     "data_criacao": "2010",
     "link": "https://www.elastic.co/elasticsearch/",
-    "icon_class": "devicon-elasticsearch-plain",
     "tags": [
       "banco de dados",
       "busca",
@@ -296,7 +274,6 @@
     "descricao": "Plataforma de streaming de eventos distribuída capaz de lidar com bilhões de eventos por dia.",
     "data_criacao": "2011",
     "link": "https://kafka.apache.org/",
-    "icon_class": "devicon-apachekafka-original",
     "tags": [
       "streaming de dados",
       "infraestrutura",
@@ -309,7 +286,6 @@
     "descricao": "Linguagem de programação orientada a contratos para implementação de Smart Contracts na plataforma Ethereum e outras blockchains.",
     "data_criacao": "2014",
     "link": "https://soliditylang.org/",
-    "icon_class": "devicon-solidity-plain",
     "tags": [
       "linguagem de programação",
       "blockchain",
@@ -322,7 +298,6 @@
     "descricao": "Linguagem de programação puramente funcional, de tipagem estática e avaliação preguiçosa.",
     "data_criacao": "1990",
     "link": "https://www.haskell.org/",
-    "icon_class": "devicon-haskell-plain",
     "tags": [
       "linguagem de programação",
       "funcional",

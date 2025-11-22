@@ -16,6 +16,9 @@ body {
     background: var(--bg-color); /* Define a cor de fundo usando uma variável */
     color: var(--secondary-color); /* Define a cor do texto padrão usando uma variável */
     font-family: "Quicksand", sans-serif; /* Define a família da fonte */
+    display: flex; /* Habilita o layout flexbox */
+    flex-direction: column; /* Organiza os filhos (header, main, footer) em coluna */
+    min-height: 100vh; /* Garante que o body ocupe no mínimo a altura total da tela */
 }
 
 header {
@@ -94,11 +97,14 @@ button#searchButton {
 }
 
 main {
-    overflow-y: scroll; /* Adiciona uma barra de rolagem vertical se o conteúdo exceder a altura */
     max-width: 80rem; /* Largura máxima do conteúdo principal */
     margin: 0 auto; /* Centraliza o conteúdo principal horizontalmente */
     margin-top: 2rem; /* Margem no topo */
-    height: calc(100vh - 10rem - 4rem); /* Calcula a altura para preencher o espaço restante da tela */
+    padding: 0 1.5rem; /* Adiciona espaçamento lateral */
+    flex-grow: 1; /* Faz o main crescer para ocupar o espaço disponível */
+    display: flex; /* Habilita o layout flexbox */
+    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
+    justify-content: center; /* Centraliza os cards no contêiner */
     scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
     -ms-overflow-style: none;  /* Oculta a barra de rolagem no IE e Edge */
 }
@@ -108,29 +114,64 @@ main::-webkit-scrollbar {
 }
 
 article {
-    background: none; /* Sem cor de fundo */
-    border-radius: 1rem; /* 1. Adiciona bordas arredondadas */
-    padding: 1rem 1.5rem; /* 2. Ajusta o padding para ser consistente */
-    margin-bottom: 1.25rem; /* Margem inferior */
-    box-shadow: none; /* Sem sombra */
-    transition: background-color 0.3s ease, border-bottom-color 0.3s ease; /* Transição suave */
-    border-bottom: 1px solid var(--bg-color); /* Borda inferior */
+    background-color: rgba(138, 180, 248, 0.05);
+    border: 1px solid rgba(138, 180, 248, 0.1);
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    transition: transform 0.3s ease;
+    overflow: hidden; /* Essencial para o efeito de expansão */
+    margin: 1rem; /* Adiciona margem para espaçamento */
+    flex-basis: 350px; /* Define uma largura base para cada card */
+}
+
+.card-details {
+    max-height: 0; /* Começa "fechado" */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa a altura máxima */
+    transition: max-height 0.5s ease-out; /* Anima a mudança de altura */
 }
 
 article:hover {
-    transform: scale(1.01); /* Aumenta ligeiramente o tamanho ao passar o mouse */
     cursor: pointer; /* Muda o cursor para uma mão */
-    /* 3. Adiciona um fundo sutil e semi-transparente */
-    background-color: rgba(138, 180, 248, 0.05); 
+    background-color: rgba(138, 180, 248, 0.1); /* Escurece levemente o fundo no hover */
+}
+
+article.expanded .card-details {
+    max-height: 20rem; /* Expande para uma altura suficiente para mostrar o conteúdo */
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem; /* Margem inferior que antes estava no h2 */
+}
+
+.arrow-icon {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    transition: transform 0.5s ease-out; /* Anima a rotação da seta */
+}
+
+article.expanded .arrow-icon {
+    transform: rotate(180deg); /* Gira a seta para cima */
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Espaço entre o ícone e o título */
+}
+
+.card-title i {
+    font-size: 1.8rem; /* Tamanho do ícone */
+    color: var(--primary-color);
+    line-height: 1; /* Garante alinhamento vertical */
 }
 
 article h2 {
     margin-top: 0; /* Remove a margem superior */
     font-weight: 600; /* Peso da fonte */
     font-size: 1.6rem; /* Tamanho da fonte */
-    border-bottom: none; /* Sem borda inferior */
-    padding-bottom: 0; /* Sem espaçamento interno inferior */
-    margin-bottom: 0.25rem; /* Margem inferior */
     color: var(--primary-color); /* Cor do texto */
 }
 
@@ -157,10 +198,31 @@ article a:hover {
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
 
+.tags-container {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background-color: rgba(138, 180, 248, 0.2);
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.tag:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
 .footer {
-    position: absolute; /* Posicionamento absoluto em relação ao elemento pai posicionado */
-    bottom: 0; /* Alinha na parte inferior */
-    left: 0; /* Alinha à esquerda */
+    margin-top: auto; /* Empurra o rodapé para o final do contêiner flex (body) */
     width: 100%; /* Largura total */
     color: var(--tertiary-color); /* Cor do texto */
     background-color: var(--bg-color); /* Cor de fundo */
@@ -242,7 +304,7 @@ article a:hover {
     }
 
     .footer { /* Estilos para o rodapé em telas muito pequenas */
-        display: none; /* Oculta o rodapé */
+        /* A regra display: none; não é mais necessária, o rodapé se comportará bem */
     }
 
     button { /* Estilos para o botão em telas muito pequenas */
