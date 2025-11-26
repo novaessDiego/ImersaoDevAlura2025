@@ -1,0 +1,2 @@
+- A pasta BasedeConhecimento é onde está o projeto principal, uma simples aplicação HTML, CSS e JavaScript.
+- A segunda pasta é um simples gerador de dados em JSOM para abastecer o projeto principal, mas não tem ligação direta.
