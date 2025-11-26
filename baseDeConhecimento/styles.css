@@ -5,10 +5,28 @@
 }
 
 :root {
-    --primary-color: #8ab4f8; /* Cor primária (azul claro) */
-    --secondary-color: #e8eaed; /* Cor secundária (cinza claro) */
-    --tertiary-color: #9aa0a6; /* Cor terciária (cinza médio) */
-    --bg-color: #202124; /* Cor de fundo (cinza escuro) */
+    /* Tema Escuro (Padrão) */
+    --primary-color: #8ab4f8;
+    --secondary-color: #e8eaed;
+    --tertiary-color: #9aa0a6;
+    --bg-color: #202124;
+    --card-bg-color: rgba(138, 180, 248, 0.05);
+    --card-border-color: rgba(138, 180, 248, 0.1);
+    --card-hover-bg-color: rgba(138, 180, 248, 0.1);
+    --modal-bg-color: #2c2c2c;
+    --modal-text-color: #f1f1f1;
+}
+
+body.light-theme {
+    --primary-color: #1a73e8;
+    --secondary-color: #202124;
+    --tertiary-color: #5f6368;
+    --bg-color: #ffffff;
+    --card-bg-color: #f1f3f4;
+    --card-border-color: #dadce0;
+    --card-hover-bg-color: #e8eaed;
+    --modal-bg-color: #ffffff;
+    --modal-text-color: #202124;
 }
 
 body {
@@ -32,6 +50,34 @@ header {
     z-index: 10; /* Define a ordem de empilhamento para ficar sobre outros elementos */
     border-bottom: 1px solid var(--bg-color); /* Adiciona uma borda inferior */
     gap: 1rem; /* Espaçamento entre os elementos flex */
+}
+
+.header-title-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme {
+    gap: 1rem;
+    cursor: pointer;
+}
+#theme-toggle-button {
+    background: none;
+    border: 1px solid transparent;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#theme-toggle-button:hover {
+    color: var(--card-hover-bg-color);
 }
 
 header h1 {
@@ -97,14 +143,7 @@ button#searchButton {
 }
 
 main {
-    max-width: 80rem; /* Largura máxima do conteúdo principal */
-    margin: 0 auto; /* Centraliza o conteúdo principal horizontalmente */
-    margin-top: 2rem; /* Margem no topo */
-    padding: 0 1.5rem; /* Adiciona espaçamento lateral */
-    flex-grow: 1; /* Faz o main crescer para ocupar o espaço disponível */
-    display: flex; /* Habilita o layout flexbox */
-    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
-    justify-content: center; /* Centraliza os cards no contêiner */
+    display: flex;
     scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
     -ms-overflow-style: none;  /* Oculta a barra de rolagem no IE e Edge */
 }
@@ -113,62 +152,38 @@ main::-webkit-scrollbar {
     display: none; /* Oculta a barra de rolagem no Chrome, Safari e Opera */
 }
 
-article {
-    background-color: rgba(138, 180, 248, 0.05);
-    border: 1px solid rgba(138, 180, 248, 0.1);
-    border-radius: 1rem;
-    padding: 1rem 1.5rem;
-    transition: transform 0.3s ease;
-    overflow: hidden; /* Essencial para o efeito de expansão */
-    margin: 1rem; /* Adiciona margem para espaçamento */
-    flex-basis: 350px; /* Define uma largura base para cada card */
+.card-container {
+    margin: 0 auto;
+    max-width: 80rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.card-details {
-    max-height: 0; /* Começa "fechado" */
-    overflow: hidden; /* Esconde o conteúdo que ultrapassa a altura máxima */
-    transition: max-height 0.5s ease-out; /* Anima a mudança de altura */
+article {
+    width: 20rem;
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--card-border-color);
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    margin: 1rem; /* Adiciona margem para espaçamento */
+    flex-basis: 350px; /* Define uma largura base para cada card */
+    transition: background-color 0.3s ease;
 }
 
 article:hover {
     cursor: pointer; /* Muda o cursor para uma mão */
-    background-color: rgba(138, 180, 248, 0.1); /* Escurece levemente o fundo no hover */
-}
-
-article.expanded .card-details {
-    max-height: 20rem; /* Expande para uma altura suficiente para mostrar o conteúdo */
+    background-color: var(--card-hover-bg-color); /* Escurece levemente o fundo no hover */
 }
 
 .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.25rem; /* Margem inferior que antes estava no h2 */
-}
-
-.arrow-icon {
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    transition: transform 0.5s ease-out; /* Anima a rotação da seta */
-}
-
-article.expanded .arrow-icon {
-    transform: rotate(180deg); /* Gira a seta para cima */
-}
-
-.card-title {
     display: flex;
     align-items: center;
     gap: 0.75rem; /* Espaço entre o ícone e o título */
 }
 
-.card-title i {
-    font-size: 1.8rem; /* Tamanho do ícone */
-    color: var(--primary-color);
-    line-height: 1; /* Garante alinhamento vertical */
-}
-
-article h2 {
+article h3 {
     margin-top: 0; /* Remove a margem superior */
     font-weight: 600; /* Peso da fonte */
     font-size: 1.6rem; /* Tamanho da fonte */
@@ -181,44 +196,6 @@ article p {
     font-size: 1rem; /* Tamanho da fonte */
     margin-bottom: 0.5rem; /* Margem inferior */
     color: var(--secondary-color); /* Cor do texto */
-}
-
-article p strong {
-    color: var(--tertiary-color); /* Cor do texto em negrito */
-    font-weight: 400; /* Peso da fonte */
-}
-
-article a {
-    color: var(--primary-color); /* Cor do link */
-    text-decoration: none; /* Remove o sublinhado padrão */
-    font-weight: 200; /* Peso da fonte */
-}
-
-article a:hover {
-    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
-}
-
-.tags-container {
-    margin-top: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.tag {
-    background-color: rgba(138, 180, 248, 0.2);
-    color: var(--primary-color);
-    padding: 0.25rem 0.75rem;
-    border-radius: 1rem;
-    font-size: 0.8rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.tag:hover {
-    background-color: var(--primary-color);
-    color: var(--bg-color);
 }
 
 .footer {
@@ -303,11 +280,79 @@ article a:hover {
         gap: 0.5rem; /* Espaçamento entre os itens */
     }
 
-    .footer { /* Estilos para o rodapé em telas muito pequenas */
-        /* A regra display: none; não é mais necessária, o rodapé se comportará bem */
-    }
-
     button { /* Estilos para o botão em telas muito pequenas */
         margin-top: 1rem; /* Adiciona margem no topo */
     }
+}
+
+/* --- Estilos do Modal com Animações --- */
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+
+    /* Animação de entrada/saída */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-container.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--bg-color);
+    color: var(--modal-text-color);
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    text-align: left;
+
+    /* Animação de entrada/saída */
+    transform: scale(0.95) translateY(-10px);
+    transition: transform 0.3s ease;
+}
+
+.tag {
+    margin: 0 0.1rem;
+    padding: 0 0.5rem;
+    color: var(--bg-color);
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+#modalLink {
+    color: var(--primary-color);
+}
+
+.modal-container.open .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
 }

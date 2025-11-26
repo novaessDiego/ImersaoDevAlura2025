@@ -8,11 +8,18 @@
 </head>
 <body>
     <header>
-        <h1>Base de Conhecimento Alura</h1>
-        <h2>Imersão Dev 2025</h2>
+        <div class="header-title-container">
+            <h1>Linguagens de Programação - DataBase </h1>
+        </div>
         <div>
-            <input type="text" id="searchInput" placeholder="Digite sua busca">
+            <input type="text" id="searchInput" placeholder="Pesquise uma Linguagem">
             <button id="searchButton">Buscar</button>
+        </div>
+        <div class="theme">
+            <button id="theme-toggle-button" aria-label="Alternar tema">
+                <p>Mode</p>
+                <i id="theme-icon" class="fas fa-moon"></i>
+            </button>
         </div>
     </header>
     <main>
@@ -35,6 +42,20 @@
             </li>
         </ul>
     </footer>
+
+    <!-- Estrutura do Modal -->
+    <div id="modal" class="modal-container">
+        <div class="modal-content">
+            <button class="modal-close" id="modalCloseButton">&times;</button>
+            <div id="modalIcon"></div>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <p><strong>Data de Criação:</strong> <span id="modalCreationDate"></span></p>
+            <p><strong>Tags:</strong> <span id="modalTags"></span></p>
+            <a id="modalLink" href="#" target="_blank" rel="noopener noreferrer">Documentação Oficial</a>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
